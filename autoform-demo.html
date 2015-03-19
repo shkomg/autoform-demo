@@ -1,0 +1,20 @@
+<head>
+  <title>autoform-demo</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+                    {{#autoForm collection="Emails" id="Emails" type="insert"}}
+                    <div class="input-group {{#if afFieldIsInvalid name='email'}}has-error{{/if}}">
+                      {{> afFieldInput name="email"}}
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Subscribe!</button>
+                      </span>
+                    </div>
+                    {{/autoForm}}
+ </template>
